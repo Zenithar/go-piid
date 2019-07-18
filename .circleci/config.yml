@@ -4,12 +4,11 @@ jobs:
   build:
     docker:
       - image: circleci/golang:latest
-        environment:
-          DOCKER_BUILDKIT: 1
     working_directory: /go/src/go.zenithar.org/piid
     environment:
+      DOCKER_BUILDKIT: 1
+      GO111MODULE: "on"
       GOBIN: /go/src/go.zenithar.org/piid/bin
-      GO111MODULE: ON
     steps:
       - checkout
 
