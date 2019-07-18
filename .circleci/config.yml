@@ -6,7 +6,6 @@ jobs:
       - image: circleci/golang:latest
     working_directory: /go/src/go.zenithar.org/piid
     environment:
-      DOCKER_BUILDKIT: 1
       GO111MODULE: "on"
       GOBIN: /go/src/go.zenithar.org/piid/bin
     steps:
