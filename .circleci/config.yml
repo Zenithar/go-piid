@@ -6,6 +6,7 @@ jobs:
       - image: circleci/golang:latest
         environment:
           DOCKER_BUILDKIT: 1
+          GO111MODULE: "ON"
     working_directory: /go/src/go.zenithar.org/piid
     environment:
       GOBIN: /go/src/go.zenithar.org/piid/bin
@@ -15,9 +16,17 @@ jobs:
       - setup_remote_docker:
           docker_layer_caching: true
 
+      - restore_cache:
+          keys:
+            - go-mod-v1-{{ checksum "tools/go.sum" }}
+
       - run: |
           go run mage.go docker:build     
 
+      - save_cache:
+          key: go-mod-v1-{{ checksum "tools/go.sum" }}
+          paths:
+            - "/go/pkg/mod"
 workflows:
   version: 2
   build_and_push:
