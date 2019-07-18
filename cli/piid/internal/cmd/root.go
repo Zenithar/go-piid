@@ -25,6 +25,7 @@ import (
 	cmdcfg "go.zenithar.org/pkg/config/cmd"
 	"go.zenithar.org/pkg/flags/feature"
 	"go.zenithar.org/pkg/log"
+	defaults "gopkg.in/mcuadros/go-defaults.v1"
 )
 
 // -----------------------------------------------------------------------------
@@ -46,6 +47,11 @@ func init() {
 // Execute main command
 func Execute() error {
 	feature.DefaultMutableGate.AddFlag(mainCmd.Flags())
+
+	runtimeConf := conf.Instrumentation.Runtime.Config
+	defaults.SetDefaults(&runtimeConf)
+	conf.Instrumentation.Runtime.Config = runtimeConf
+
 	initConfig()
 
 	return mainCmd.Execute()

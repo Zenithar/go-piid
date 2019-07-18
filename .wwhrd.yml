@@ -16,3 +16,4 @@ exceptions:
   - github.com/dchest/uniuri
   - github.com/AndreasBriese/bbloom
   - github.com/certifi/gocertifi
+  - go.zenithar.org/pkg/...

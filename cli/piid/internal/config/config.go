@@ -60,3 +60,10 @@ type Configuration struct {
 		} `toml:"HTTP" comment:"###############################\n HTTP Settings \n##############################"`
 	}
 }
+
+// -----------------------------------------------------------------------------
+
+// Validate settings
+func (c *Configuration) Validate() error {
+	return nil
+}
