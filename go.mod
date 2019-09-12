@@ -7,9 +7,9 @@ require (
 	github.com/fatih/color v1.7.0
 	github.com/magefile/mage v1.8.0
 	github.com/mattn/go-colorable v0.1.2 // indirect
-	github.com/spf13/afero v1.2.1 // indirect
+	github.com/spf13/afero v1.2.2 // indirect
 	github.com/spf13/cobra v0.0.5
-	github.com/stretchr/testify v1.3.0 // indirect
+	github.com/stretchr/testify v1.4.0 // indirect
 	go.uber.org/zap v1.10.0
 	go.zenithar.org/pkg/config v0.0.4
 	go.zenithar.org/pkg/flags v0.0.1
